@@ -21,7 +21,7 @@ return function (ContainerBuilder $containerBuilder) {
                     'port' => (int) ($_ENV['DB_PORT'] ?? 3306),
                     'dbname' => $_ENV['DB_NAME'] ?? 'TestASorpresa',
                     'user' => $_ENV['DB_USER'] ?? 'utente_phpmyadmin',
-                    'pass' => $_ENV['DB_PASS'] ?? '86FbuSRrfWRkgWh',
+                    'pass' => $_ENV['DB_PASS'] ?? 'PasswordMoltoSicura',
                     'charset' => $_ENV['DB_CHARSET'] ?? 'utf8mb4',
                 ],
                 'logger' => [

@@ -76,7 +76,7 @@ Supported environment variables:
 - `DB_PORT` (default: `3306`)
 - `DB_NAME` (default: `TestASorpresa`)
 - `DB_USER` (default: `utente_phpmyadmin`)
-- `DB_PASS` (default: `86FbuSRrfWRkgWh`)
+- `DB_PASS` (default: `PasswordMoltoSicura`)
 - `DB_CHARSET` (default: `utf8mb4`)
 
 ## Start, stop and restart the app server

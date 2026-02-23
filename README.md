@@ -65,7 +65,7 @@ Default correnti:
 - `DB_PORT`: `3306`
 - `DB_NAME`: `TestASorpresa`
 - `DB_USER`: `utente_phpmyadmin`
-- `DB_PASS`: `86FbuSRrfWRkgWh`
+- `DB_PASS`: `PasswordMoltoSicura`
 - `DB_CHARSET`: `utf8mb4`
 
 ## Test richieste
