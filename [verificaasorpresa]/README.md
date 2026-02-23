@@ -45,6 +45,7 @@ That's it! Now go build something cool.
 
 This project now includes a dynamic endpoint:
 
+- `GET /api` (HTML docs with endpoint list)
 - `GET /api/{n}`
 
 Where `n` is the index of the query to execute.
@@ -114,6 +115,7 @@ composer start
 
 ```bash
 curl http://localhost:8080/
+curl http://localhost:8080/api
 curl http://localhost:8080/api/1
 curl http://localhost:8080/api/2
 ```

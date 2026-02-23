@@ -33,7 +33,7 @@ INSERT INTO Catalogo (Fid, Pid, costo) VALUES
     (1, 7, 30),
 
     (2, 1, 10),
-    (2, 2, 9),
+    (2, 2, 8),
     (2, 3, 7),
     (2, 4, 6),
 
@@ -42,7 +42,7 @@ INSERT INTO Catalogo (Fid, Pid, costo) VALUES
     (3, 5, 14),
 
     (4, 1, 9),
-    (4, 3, 9),
+    (4, 3, 7),
     (4, 5, 13),
 
     (5, 1, 13),

@@ -32,11 +32,14 @@ composer start
 
 - `OPTIONS /{routes:.*}`
 - `GET /`
+- `GET /api` (documentazione HTML endpoint)
 - `GET /api/{n}`
 - `GET /users`
 - `GET /users/{id}`
 
 ## Endpoint dinamico API
+
+Aprendo direttamente `GET /api` viene mostrata una pagina HTML con la documentazione rapida e l'elenco endpoint disponibili.
 
 L'endpoint `GET /api/{n}` esegue la query associata all'indice `n`.
 
@@ -72,6 +75,7 @@ Default correnti:
 
 ```bash
 curl http://localhost:8080/
+curl http://localhost:8080/api
 curl http://localhost:8080/api/1
 curl http://localhost:8080/api/2
 curl http://localhost:8080/users

@@ -71,14 +71,14 @@ class ApiQueryAction extends Action
         $queries = [
             0 => 'SHOW TABLES',
             1 => 'SELECT DISTINCT p.Pnome FROM Pezzi p JOIN Catalogo c ON c.Pid = p.Pid',
-            2 => 'SELECT f.Fnome FROM Fornitori f WHERE NOT EXISTS (SELECT 1 FROM Pezzi p WHERE NOT EXISTS (SELECT 1 FROM Catalogo c WHERE c.Fid = f.Fid AND c.Pid = p.Pid))',
-            3 => 'SELECT f.Fnome FROM Fornitori f WHERE NOT EXISTS (SELECT 1 FROM Pezzi p WHERE p.colore = rosso AND NOT EXISTS (SELECT 1 FROM Catalogo c WHERE c.Fid = f.Fid AND c.Pid = p.Pid))',
-            4 => 'SELECT DISTINCT p.Pnome FROM Pezzi p JOIN Catalogo c ON c.Pid = p.Pid JOIN Fornitori f ON f.Fid = c.Fid WHERE f.Fnome = Acme AND NOT EXISTS (SELECT 1 FROM Catalogo c2 WHERE c2.Pid = p.Pid AND c2.Fid <> c.Fid)',
+            2 => 'SELECT f.Fnome FROM Fornitori f WHERE NOT EXISTS (SELECT * FROM Pezzi p WHERE NOT EXISTS (SELECT * FROM Catalogo c WHERE c.Fid = f.Fid AND c.Pid = p.Pid))',
+            3 => 'SELECT f.Fnome FROM Fornitori f WHERE NOT EXISTS (SELECT * FROM Pezzi p WHERE p.colore = \'rosso\' AND NOT EXISTS (SELECT * FROM Catalogo c WHERE c.Fid = f.Fid AND c.Pid = p.Pid))',
+            4 => 'SELECT DISTINCT p.Pid, p.Pnome FROM Pezzi p JOIN Catalogo c ON c.Pid = p.Pid JOIN Fornitori f ON f.Fid = c.Fid WHERE f.Fnome = \'Acme\' AND NOT EXISTS (SELECT * FROM Catalogo c2 WHERE c2.Pid = p.Pid AND c2.Fid <> c.Fid)',
             5 => 'SELECT DISTINCT c.Fid FROM Catalogo c WHERE c.costo > (SELECT AVG(c2.costo) FROM Catalogo c2 WHERE c2.Pid = c.Pid)',
             6 => 'SELECT p.Pnome, f.Fnome FROM Catalogo c JOIN Pezzi p ON p.Pid = c.Pid JOIN Fornitori f ON f.Fid = c.Fid WHERE c.costo = (SELECT MAX(c2.costo) FROM Catalogo c2 WHERE c2.Pid = c.Pid) ORDER BY p.Pid, f.Fnome',
-            7 => 'SELECT c.Fid FROM Catalogo c JOIN Pezzi p ON p.Pid = c.Pid GROUP BY c.Fid HAVING SUM(CASE WHEN p.colore <> rosso THEN 1 ELSE 0 END) = 0',
-            8 => 'SELECT c.Fid FROM Catalogo c JOIN Pezzi p ON p.Pid = c.Pid GROUP BY c.Fid HAVING SUM(p.colore = rosso) > 0 AND SUM(p.colore = verde) > 0',
-            9 => 'SELECT DISTINCT c.Fid FROM Catalogo c JOIN Pezzi p ON p.Pid = c.Pid WHERE p.colore IN (rosso, verde)',
+            7 => 'SELECT c.Fid FROM Catalogo c JOIN Pezzi p ON p.Pid = c.Pid GROUP BY c.Fid HAVING SUM(CASE WHEN p.colore <> \'rosso\' THEN 1 ELSE 0 END) = 0',
+            8 => 'SELECT c.Fid FROM Catalogo c JOIN Pezzi p ON p.Pid = c.Pid GROUP BY c.Fid HAVING SUM(p.colore = \'rosso\') > 0 AND SUM(p.colore = \'verde\') > 0',
+            9 => 'SELECT DISTINCT c.Fid FROM Catalogo c JOIN Pezzi p ON p.Pid = c.Pid WHERE p.colore IN (\'rosso\', \'verde\')',
             10 => 'SELECT c.Pid FROM Catalogo c GROUP BY c.Pid HAVING COUNT(DISTINCT c.Fid) >= 2',
         ];
 
